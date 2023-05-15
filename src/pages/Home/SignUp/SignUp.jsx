@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import loginImg from "../../../assets/images/login/login.svg";
-const Login = () => {
-  const handleLogin = (event) => {
+
+const SignUp = () => {
+  const handleSignUp = (event) => {
     event.preventDefault();
   };
   return (
@@ -12,8 +13,19 @@ const Login = () => {
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
-            <h1 className="text-3xl text-center font-bold">Login now!</h1>
-            <form onSubmit={handleLogin}>
+            <h1 className="text-3xl text-center font-bold">Sign Up now!</h1>
+            <form onSubmit={handleSignUp}>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  className="input input-bordered"
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -27,11 +39,12 @@ const Login = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text">Confirm Password</span>
                 </label>
                 <input
                   type="text"
                   name="password"
+                  required
                   placeholder="password"
                   className="input input-bordered"
                 />
@@ -44,15 +57,15 @@ const Login = () => {
               <div className="form-control mt-6">
                 <input
                   type="submit"
-                  value="Login"
+                  value="Sign up"
                   className="btn btn-primary"
                 />
               </div>
             </form>
             <p className="text-center my-4">
-              New to Car Doctors?{" "}
-              <Link to="/signup" className="text-orange-600  font-bold">
-                Sign Up
+              Already have an account?{" "}
+              <Link to="/login" className="text-orange-600  font-bold">
+                Login
               </Link>
             </p>
           </div>
@@ -62,4 +75,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
