@@ -6,7 +6,7 @@ import img5 from "../../../assets/images/banner/5.jpg";
 import img6 from "../../../assets/images/banner/6.jpg";
 const Banner = () => {
   return (
-    <div className="carousel w-full h-[600px]">
+    <div className="carousel w-full h-[624  px]">
       <div id="slide1" className="carousel-item relative w-full">
         <img src={img1} className="w-full rounded-xl" />
         <div className="absolute rounded-xl bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] flex items-center   top-0 bottom-0">
