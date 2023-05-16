@@ -19,10 +19,13 @@ const NavBar = () => {
       <li>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        {!user ? (
-          <Link to="/login">Login</Link>
+        {user ? (
+          <>
+            <Link to="/bookings">My Bookings</Link>
+            <button onClick={handleLogOut}>Log Out</button>
+          </>
         ) : (
-          <button onClick={handleLogOut}>Log Out</button>
+          <Link to="/login">Login</Link>
         )}
       </li>
     </>
