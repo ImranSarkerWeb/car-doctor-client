@@ -8,7 +8,7 @@ const NavBar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        // Sign-out successful.
+        localStorage.removeItem("car-access-token");
       })
       .catch((error) => {
         console.log(error);
