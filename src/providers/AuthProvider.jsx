@@ -33,6 +33,21 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      const loggedUser = {
+        email: currentUser.email,
+      };
+      fetch(`http://localhost:5000/jwt`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(loggedUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          localStorage.setItem("car-access-token", data.token);
+        });
     });
     return () => {
       return unsubscribe();
